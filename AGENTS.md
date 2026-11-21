@@ -232,9 +232,11 @@ PYTHONPATH=src python3 -m unittest discover -s tests -v
      원격 SHA가 달라졌거나 조회에 실패하면 보존합니다. 거절되면 기대값을 바꿔 재시도하지 않습니다.
 
      ```sh
-     git push --no-follow-tags --force-with-lease="refs/heads/$a:$merged_head_sha" \
+     git push --no-follow-tags \
+       --force-with-lease="refs/heads/$a:$merged_head_sha" \
        origin ":refs/heads/$a"
      ```
+
 6. 머지한 뒤에는 이번에 처리하지 않은 후속 제안을 PR 별로 정리해 보고합니다.
 
 지킬 것:
